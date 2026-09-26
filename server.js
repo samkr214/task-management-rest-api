@@ -1,6 +1,7 @@
 
 
 const express = require("express");
+const cors = require("cors");
 const db = require("./database");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -8,6 +9,7 @@ require("dotenv").config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 function authenticateToken(req, res, next) {
